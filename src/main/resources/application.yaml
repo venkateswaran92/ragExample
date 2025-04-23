@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ragExample
+  ai:
+    chat:
+      client:
+        enabled: false
+    ollama:
+      chat:
+        model: llama3.2
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ragExample
+    username: postgres
+    password: postgres
+  vectorstore:
+    pgvector:
+    index-type: HNSW
+    distance-type: COSINE_DISTANCE
+    dimension: 1536
+    max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+  docker:
+    compose:
+      lifecycle-management: start_only
